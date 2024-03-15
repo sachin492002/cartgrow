@@ -22,7 +22,7 @@ function Page() {
         setMethod(method);
     };
     const router = useRouter();
-    const handleSubmit= (e) =>{
+    const handleSubmit= (e:any) =>{
         e.preventDefault()
         router.push('/confirm');
     }
