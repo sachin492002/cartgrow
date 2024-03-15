@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# InstaPayments Checkout Experience
 
-## Getting Started
+This project aims to develop a user-friendly, visually engaging, and responsive checkout experience for online shoppers. It focuses on the final three steps of the typical online shopping flow: checkout, payment options selection, and order confirmation.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. [Assignment Overview](#assignment-overview)
+2. [Technologies Used](#technologies-used)
+3. [Features](#features)
+4. [Local Development](#local-development)
+5. [Deployment](#deployment)
+
+
+## Assignment Overview
+
+The assignment involves building a checkout experience using Next.js, incorporating features such as caching, dynamic UI elements, proper validation, visual appeal, responsiveness, and user-friendly flow. Additionally, it includes an extra challenge of implementing a White Labeling feature to customize the application's theme dynamically.
+
+## Technologies Used
+
+- Next.js with TypeScript
+- Redux for state management
+- Next.js Fetch API for data fetching and caching
+
+## Features
+
+- Checkout Page: Display order summary and allow users to proceed to payment selection.
+- Payment Options Page: Render available payment methods and allow seamless switching between methods.
+- Order Confirmation Page: Display order details, selected payment method, and transaction status (success, failure, pending).
+- Form validation for user input errors.
+- Caching is done by fetch api in nextjs 14
+- Responsive design supporting multiple screen sizes.
+
+## Local Development
+
+1. Clone the repository:
+```
+git clone <repository_url>
+cd instapayments-checkout
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+3. Start the development server:
 
-To learn more about Next.js, take a look at the following resources:
+```
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Open your browser and navigate to `http://localhost:3000` to view the application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
