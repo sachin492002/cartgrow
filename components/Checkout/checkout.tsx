@@ -11,9 +11,8 @@ interface Props {
 
 function Checkout({merchant}: Props) {
     return (
-        <div className={'flex flex-col md:flex-row w-full h-dvh'}>
+        <div className={'flex flex-col md:flex-row w-full min-h-dvh'}>
         <div className={`flex flex-col gap-4 px-2 md:px-20 w-full md:w-2/3 bg-white`}
-
             >
             <div className='flex justify-center w-full'>
                 <Header merchant={merchant}/>
