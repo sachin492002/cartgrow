@@ -14,7 +14,7 @@ function Page() {
     // @ts-ignore
     const { orderDetails,merchantMetaData: merchant, totalAmount,total, discount } = useSelector((state) => state.cart);
     const dispatch = useDispatch();
-    const [error, setError] = useState(true);
+
 
     const [method, setMethod] = useState("CARDS");
 
@@ -31,9 +31,9 @@ function Page() {
         <div className={'px-2 md:px-20 bg-white w-full min-h-dvh'}>
             <Header merchant={merchant}/>
             <div className={'w-full  inline-flex '}>
-                <BackButton text={'back to cart'} nav={'/'} theme={merchant.theme}/>
+                <BackButton text={'back to cart'} nav={'/'} theme={merchant?.theme}/>
                 <span className='text-center font-bold font-serif text-3xl mx-auto' style={{
-                    color: merchant.theme['--primary']
+                    color: merchant?.theme['--primary']
                 }}>Secure Payment</span>
             </div>
             <div className='w-full '>
@@ -48,11 +48,11 @@ function Page() {
                 <div className="relative mx-auto w-full bg-white">
                     <div className="grid min-h-screen grid-cols-10">
                         {
-                            orderDetails?.paymentMethods.includes("CARDS") && (method === "CARDS") &&
-                            <CardPayment theme={merchant.theme} handleSubmit={handleSubmit}/>
+                            orderDetails?.paymentMethods?.includes("CARDS") && (method === "CARDS") &&
+                            <CardPayment theme={merchant?.theme} handleSubmit={handleSubmit}/>
                         }
                         {
-                            orderDetails?.paymentMethods.includes("UPI") && (method === "UPI") && <Upi theme={merchant.theme} handleSubmit={handleSubmit}/>
+                            orderDetails?.paymentMethods?.includes("UPI") && (method === "UPI") && <Upi theme={merchant?.theme} handleSubmit={handleSubmit}/>
                         }
                         <div
                             className="relative col-span-full flex flex-col py-6 pl-8 pr-4 sm:py-12 lg:col-span-4 lg:py-24">
@@ -64,7 +64,7 @@ function Page() {
                                 <div
                                     className="absolute inset-0 h-full w-full  opacity-95"
                                     style={{
-                                        backgroundImage: `linear-gradient(to bottom, ${merchant.theme["--primary"]}, ${merchant.theme["--primary-foreground"]})`
+                                        backgroundImage: `linear-gradient(to bottom, ${merchant?.theme["--primary"]}, ${merchant?.theme["--primary-foreground"]})`
                                     }}
                                 ></div>
                             </div>
@@ -99,7 +99,6 @@ function Page() {
                                         <span>Discount : </span><span>-{discount}$</span></p>
                                     <p className="flex justify-between text-lg font-bold text-white">
                                         <span>Total price:</span><span>{total}$</span></p>
-
                                 </div>
                             </div>
                         </div>
