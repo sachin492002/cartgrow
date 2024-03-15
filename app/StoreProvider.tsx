@@ -1,11 +1,13 @@
 'use client'
-import useOrderStore from "@/lib/store";
+import { Provider } from 'react-redux'
+import {store} from "@/lib/store";
 
-export default function AppInitializer({ orders , merchantdata , children }) {
-    useOrderStore.setState({
-        orderDetails: orders,
-        merchantMetadata: merchantdata,
-    })
 
-    return children
+
+export default function StoreProvider({
+                                          children,
+                                      }: {
+    children: React.ReactNode
+}) {
+    return <Provider store={store}>{children}</Provider>
 }
